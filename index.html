@@ -35,8 +35,7 @@
   </style>
 </head>
 
-<body class="bg-[#0f172a] text-white font-sans">
-
+<body class="bg-[#2F3C7E] text-white font-sans">
   <!-- Header -->
   <header class="backdrop-blur-md bg-black/30 text-white p-4 border-b border-white/30 fixed top-0 left-0 w-full z-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
@@ -55,34 +54,40 @@
 
   <!-- Hero -->
   <section class="relative h-screen flex items-center justify-center bg-cover bg-center parallax" style="background-image: url('design.jpg');">
-    <div class="bg-black bg-opacity-50 w-full h-full absolute top-0 left-0"></div>
+    <div class="bg-black bg-opacity-35 w-full h-full absolute top-0 left-0"></div>
     <div class="relative z-10 text-center text-white px-4 fade-in">
       <h2 class="text-5xl font-bold mb-4">Elevate Reality with Precision Engineering</h2>
       <p class="text-xl max-w-xl mx-auto">Delivering expert CAD modeling, advanced 3D prototyping, and bespoke design services to transform your ideas into reality.</p>
     </div>
   </section>
 
-  <!-- Services -->
+   <!-- Services -->
   <section id="services" class="py-16 bg-cover bg-center parallax relative" style="background-image: url('services-bg.jpg');">
-    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
     <div class="relative max-w-6xl mx-auto px-4 text-white">
       <h3 class="text-3xl font-bold mb-8 text-center">Our Services</h3>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="p-6 border rounded-lg shadow text-center bg-white/10 backdrop-blur-md hover:-translate-y-2 transition duration-300">
-          <img src="cad.jpg" alt="CAD Modelling" class="w-full h-40 object-cover mb-4 rounded" />
-          <h4 class="text-xl font-semibold mb-2">CAD Modelling</h4>
-          <p>Accurate and detailed 3D models tailored for mechanical engineering and product development.</p>
-        </div>
-        <div class="p-6 border rounded-lg shadow text-center bg-white/10 backdrop-blur-md hover:-translate-y-2 transition duration-300">
-          <img src="3d.jpeg" alt="3D Prototyping" class="w-full h-40 object-cover mb-4 rounded" />
-          <h4 class="text-xl font-semibold mb-2">3D Prototyping</h4>
-          <p>Rapid development of functional prototypes to validate design concepts and accelerate innovation.</p>
-        </div>
-        <div class="p-6 border rounded-lg shadow text-center bg-white/10 backdrop-blur-md hover:-translate-y-2 transition duration-300">
-          <img src="custom.jpg" alt="Custom Design" class="w-full h-40 object-cover mb-4 rounded" />
-          <h4 class="text-xl font-semibold mb-2">Custom Design</h4>
-          <p>Innovative and client-focused design solutions crafted to meet your unique project requirements.</p>
-        </div>
+        <a href="cad.htm" class="block transform hover:scale-105 transition duration-300">
+          <div class="p-6 border rounded-lg shadow text-center bg-white/10 backdrop-blur-md hover:bg-white/20 hover:shadow-xl cursor-pointer">
+            <img src="cad.jpg" alt="CAD Modelling" class="w-full h-40 object-cover mb-4 rounded" />
+            <h4 class="text-xl font-semibold mb-2">CAD Modelling</h4>
+            <p>Accurate and detailed 3D models tailored for mechanical engineering and product development.</p>
+          </div>
+        </a>
+        <a href="3d.htm" class="block transform hover:scale-105 transition duration-300">
+          <div class="p-6 border rounded-lg shadow text-center bg-white/10 backdrop-blur-md hover:bg-white/20 hover:shadow-xl cursor-pointer">
+            <img src="3d.jpeg" alt="3D Prototyping" class="w-full h-40 object-cover mb-4 rounded" />
+            <h4 class="text-xl font-semibold mb-2">3D Prototyping</h4>
+            <p>Rapid development of functional prototypes to validate design concepts and accelerate innovation.</p>
+          </div>
+        </a>
+        <a href="custom.htm" class="block transform hover:scale-105 transition duration-300">
+          <div class="p-6 border rounded-lg shadow text-center bg-white/10 backdrop-blur-md hover:bg-white/20 hover:shadow-xl cursor-pointer">
+            <img src="custom.jpg" alt="Custom Design" class="w-full h-40 object-cover mb-4 rounded" />
+            <h4 class="text-xl font-semibold mb-2">Custom Design</h4>
+            <p>Innovative and client-focused design solutions crafted to meet your unique project requirements.</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -169,6 +174,59 @@
   <footer class="bg-gray-900 text-white text-center py-4">
     <p>&copy; 2025 V2REAL. All rights reserved.</p>
   </footer>
+
+<script>
+  // Smooth scroll for nav
+  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+  });
+
+  // Dynamic year in footer
+  document.querySelector("footer p").innerHTML = `&copy; ${new Date().getFullYear()} V2REAL. All rights reserved.`;
+
+  // Form submission
+  document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Thank you! Your message has been received.");
+    this.reset();
+  });
+
+  // Prototype slider logic
+  const container = document.querySelector("#prototypes .overflow-hidden");
+  const track = container.querySelector(".flex");
+  let scrollAmount = 0;
+
+  const scrollSlider = (dir) => {
+    const width = container.clientWidth;
+    scrollAmount += dir * width;
+    track.style.transition = "transform 0.5s ease";
+    track.style.transform = `translateX(-${scrollAmount}px)`;
+  };
+
+  // Create arrows
+  const leftArrow = document.createElement("button");
+  const rightArrow = document.createElement("button");
+  leftArrow.innerHTML = "←";
+  rightArrow.innerHTML = "→";
+
+  [leftArrow, rightArrow].forEach(btn => {
+    btn.className = "absolute top-1/2 transform -translate-y-1/2 text-3xl bg-black bg-opacity-40 text-white px-2 z-50 hover:bg-opacity-60";
+  });
+
+  leftArrow.style.left = "0.5rem";
+  rightArrow.style.right = "0.5rem";
+  container.appendChild(leftArrow);
+  container.appendChild(rightArrow);
+
+  leftArrow.addEventListener("click", () => scrollSlider(-1));
+  rightArrow.addEventListener("click", () => scrollSlider(1));
+</script>
+
 
 </body>
 </html>
