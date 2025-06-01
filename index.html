@@ -6,6 +6,7 @@
   <title>V2REAL - Elevate Reality</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    
     /* Parallax Effect */
     .parallax {
       background-attachment: fixed;
@@ -32,6 +33,9 @@
     .animate-scroll {
       animation: scroll 30s linear infinite;
     }
+    html {
+    scroll-behavior: smooth;
+  }
   </style>
 </head>
 
@@ -40,8 +44,10 @@
   <header class="backdrop-blur-md bg-black/30 text-white p-4 border-b border-white/30 fixed top-0 left-0 w-full z-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <div class="flex items-center space-x-2">
+       <a href="#" class="flex items-center space-x-2 hover:opacity-80 transition">
         <img src="logo.png" alt="V2REAL Logo" class="h-8 w-8" />
-        <h1 class="text-2xl font-bold">V2REAL</h1>
+        <h1 class="text-2xl font-bold text-[#FBEAEB]">V2REAL</h1>
+      </a>
       </div>
       <nav class="space-x-4">
         <a href="#services" class="hover:text-gray-300">Services</a>
@@ -152,81 +158,62 @@
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-16 bg-white text-black">
-    <div class="max-w-3xl mx-auto px-4 text-center">
-      <h3 class="text-3xl font-bold mb-4">Get in Touch</h3>
-      <p class="mb-8">Have a project or idea? Reach out to us via the form, email, or WhatsApp.</p>
-      <form class="space-y-4 text-left">
-        <input type="text" placeholder="Your Name" class="w-full p-3 border rounded" />
-        <input type="email" placeholder="Your Email" class="w-full p-3 border rounded" />
-        <textarea placeholder="Your Message" rows="4" class="w-full p-3 border rounded"></textarea>
-        <button type="submit" class="bg-gray-900 text-white px-6 py-2 rounded hover:bg-gray-800">Send Message</button>
-      </form>
-      <div class="mt-6 text-sm text-gray-600">
-        Or email us at <a href="mailto:v2real@example.com" class="text-blue-500">v2real@example.com</a><br />
-        Or chat on <a href="https://wa.me/1234567890" class="text-green-500">WhatsApp</a>
+<!-- Contact -->
+<section id="contact" class="py-16 bg-white text-black">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+   <h3 class="text-3xl font-bold mb-4 drop-shadow-sm">Get in Touch</h3>
+<p class="mb-8 drop-shadow-sm">Have a project or idea? Reach out to us via the form, email, or WhatsApp.</p>
+
+   <!-- Contact Form -->
+    <form action="mailto:v2real@example.com" method="POST" enctype="text/plain" class="space-y-4 text-left">
+      <input type="text" placeholder="Your Name" name="name" required class="w-full p-3 border rounded text-black" />
+      <input type="email" placeholder="Your Email" name="email" required class="w-full p-3 border rounded text-black" />
+      <textarea placeholder="Your Message" name="message" rows="4" required class="w-full p-3 border rounded text-black"></textarea>
+
+      <!-- Buttons with Icons -->
+      <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+        <!-- Send Email Button -->
+        <a href="mailto:v2real@example.com" 
+           class="group inline-flex items-center bg-black text-white px-4 py-2 rounded hover:bg-gray-700">
+          <!-- Your Custom Email SVG with hover effect -->
+          <svg class="h-5 w-5 mr-2 transition-colors" viewBox="0 0 439.371 331.469" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(-145.3305,-145.3305)">
+              <path d="M 569.374,461.472 L 569.374,160.658 L 160.658,160.658 L 160.658,461.472 L 569.374,461.472 z" 
+                    fill="none" stroke="#FBEAEB" stroke-width="30.655"/>
+              <path d="M 164.46,164.49 L 340.78,343.158 C 353.849,356.328 377.63,356.172 390.423,343.278 L 566.622,165.928" 
+                    fill="none" stroke="#FBEAEB" stroke-width="30.655"/>
+              <path d="M 170.515,451.566 L 305.61,313.46" 
+                    fill="none" stroke="#FBEAEB" stroke-width="30.655"/>
+              <path d="M 557.968,449.974 L 426.515,315.375" 
+                    fill="none" stroke="#FBEAEB" stroke-width="30.655"/>
+            </g>
+          </svg>
+          Send Email
+        </a>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/8260706752?text=Hello%20V2REAL,%20I%20would%20like%20to%20discuss%20a%20project%20opportunity.%20Could%20we%20schedule%20a%20meeting?" target="_blank"
+           class="bg-green-600 text-white px-6 py-2 rounded flex items-center justify-center gap-2 hover:bg-green-700 w-full sm:w-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.52 3.48A11.943 11.943 0 0012 0C5.373 0 0 5.373 0 12c0 2.118.555 4.095 1.52 5.82L0 24l6.324-1.65A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12 0-3.18-1.242-6.228-3.48-8.52zM12 22c-1.89 0-3.74-.528-5.34-1.5l-.38-.23-3.75.97.99-3.63-.25-.39A9.951 9.951 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.74-7.26l-2.1-.63a1.12 1.12 0 00-1.05.29l-.55.56a8.282 8.282 0 01-3.9-3.9l.56-.55a1.12 1.12 0 00.29-1.05l-.63-2.1a1.12 1.12 0 00-1.05-.8H8.27a1.12 1.12 0 00-1.12 1.12c0 5.065 4.105 9.17 9.17 9.17a1.12 1.12 0 001.12-1.12v-.62a1.12 1.12 0 00-.8-1.05z"/>
+          </svg>
+          WhatsApp
+        </a>
       </div>
+    </form>
+
+    <!-- Alternate contact methods -->
+    <div class="mt-6 text-sm">
+      Or email us at <a href="mailto:v2real@example.com" class="text-blue-500 underline">v2real@example.com</a><br />
+      Or chat on <a href="https://wa.me/1234567890" class="text-green-500 underline">WhatsApp</a>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-white text-center py-4">
     <p>&copy; 2025 V2REAL. All rights reserved.</p>
   </footer>
-
-<script>
-  // Smooth scroll for nav
-  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-        behavior: "smooth"
-      });
-    });
-  });
-
-  // Dynamic year in footer
-  document.querySelector("footer p").innerHTML = `&copy; ${new Date().getFullYear()} V2REAL. All rights reserved.`;
-
-  // Form submission
-  document.querySelector("form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Thank you! Your message has been received.");
-    this.reset();
-  });
-
-  // Prototype slider logic
-  const container = document.querySelector("#prototypes .overflow-hidden");
-  const track = container.querySelector(".flex");
-  let scrollAmount = 0;
-
-  const scrollSlider = (dir) => {
-    const width = container.clientWidth;
-    scrollAmount += dir * width;
-    track.style.transition = "transform 0.5s ease";
-    track.style.transform = `translateX(-${scrollAmount}px)`;
-  };
-
-  // Create arrows
-  const leftArrow = document.createElement("button");
-  const rightArrow = document.createElement("button");
-  leftArrow.innerHTML = "←";
-  rightArrow.innerHTML = "→";
-
-  [leftArrow, rightArrow].forEach(btn => {
-    btn.className = "absolute top-1/2 transform -translate-y-1/2 text-3xl bg-black bg-opacity-40 text-white px-2 z-50 hover:bg-opacity-60";
-  });
-
-  leftArrow.style.left = "0.5rem";
-  rightArrow.style.right = "0.5rem";
-  container.appendChild(leftArrow);
-  container.appendChild(rightArrow);
-
-  leftArrow.addEventListener("click", () => scrollSlider(-1));
-  rightArrow.addEventListener("click", () => scrollSlider(1));
-</script>
-
-
 </body>
 </html>
