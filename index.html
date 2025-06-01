@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V2REAL - Elevate Reality</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Parallax Effect */
+    .parallax {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeInUp 1s ease-out both;
+    }
+
+    /* Infinite Scroll Animation */
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animate-scroll {
+      animation: scroll 30s linear infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-[#0f172a] text-white font-sans">
+
+  <!-- Header -->
+  <header class="backdrop-blur-md bg-black/30 text-white p-4 border-b border-white/30 fixed top-0 left-0 w-full z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <img src="logo.png" alt="V2REAL Logo" class="h-8 w-8" />
+        <h1 class="text-2xl font-bold">V2REAL</h1>
+      </div>
+      <nav class="space-x-4">
+        <a href="#services" class="hover:text-gray-300">Services</a>
+        <a href="#prototypes" class="hover:text-gray-300">Prototypes</a>
+        <a href="#portfolio" class="hover:text-gray-300">Portfolio</a>
+        <a href="#contact" class="hover:text-gray-300">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative h-screen flex items-center justify-center bg-cover bg-center parallax" style="background-image: url('design.jpg');">
+    <div class="bg-black bg-opacity-50 w-full h-full absolute top-0 left-0"></div>
+    <div class="relative z-10 text-center text-white px-4 fade-in">
+      <h2 class="text-5xl font-bold mb-4">Elevate Reality with Precision Engineering</h2>
+      <p class="text-xl max-w-xl mx-auto">Delivering expert CAD modeling, advanced 3D prototyping, and bespoke design services to transform your ideas into reality.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16 bg-cover bg-center parallax relative" style="background-image: url('services-bg.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+    <div class="relative max-w-6xl mx-auto px-4 text-white">
+      <h3 class="text-3xl font-bold mb-8 text-center">Our Services</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 border rounded-lg shadow text-center bg-white/10 backdrop-blur-md hover:-translate-y-2 transition duration-300">
+          <img src="cad.jpg" alt="CAD Modelling" class="w-full h-40 object-cover mb-4 rounded" />
+          <h4 class="text-xl font-semibold mb-2">CAD Modelling</h4>
+          <p>Accurate and detailed 3D models tailored for mechanical engineering and product development.</p>
+        </div>
+        <div class="p-6 border rounded-lg shadow text-center bg-white/10 backdrop-blur-md hover:-translate-y-2 transition duration-300">
+          <img src="3d.jpeg" alt="3D Prototyping" class="w-full h-40 object-cover mb-4 rounded" />
+          <h4 class="text-xl font-semibold mb-2">3D Prototyping</h4>
+          <p>Rapid development of functional prototypes to validate design concepts and accelerate innovation.</p>
+        </div>
+        <div class="p-6 border rounded-lg shadow text-center bg-white/10 backdrop-blur-md hover:-translate-y-2 transition duration-300">
+          <img src="custom.jpg" alt="Custom Design" class="w-full h-40 object-cover mb-4 rounded" />
+          <h4 class="text-xl font-semibold mb-2">Custom Design</h4>
+          <p>Innovative and client-focused design solutions crafted to meet your unique project requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prototypes with Infinite Scroll -->
+  <section id="prototypes" class="relative py-16 bg-cover bg-center parallax" style="background-image: url('portfolio-bg.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative max-w-6xl mx-auto px-4">
+      <h3 class="text-3xl font-bold mb-8 text-center text-white">Prototype Display</h3>
+      <div class="overflow-hidden relative">
+        <div class="flex animate-scroll space-x-8 w-max">
+          <!-- Repeat content twice for seamless scroll -->
+          <div class="flex space-x-8">
+            <!-- Prototype Cards -->
+            <div class="border rounded-lg shadow p-4 bg-white text-black w-72 flex-shrink-0">
+              <img src="jet.jpg" alt="Mini Jet Engine" class="rounded mb-4" />
+              <h4 class="text-xl font-semibold mb-2">Mini Jet Engine</h4>
+              <p class="text-sm text-gray-600">3D-printed turbine prototype demonstrating airflow and structure.</p>
+            </div>
+            <div class="border rounded-lg shadow p-4 bg-white text-black w-72 flex-shrink-0">
+              <img src="cad p.jpeg" alt="Custom Casing" class="rounded mb-4" />
+              <h4 class="text-xl font-semibold mb-2">Custom Casing</h4>
+              <p class="text-sm text-gray-600">Lightweight casing for electronic devices.</p>
+            </div>
+            <div class="border rounded-lg shadow p-4 bg-white text-black w-72 flex-shrink-0">
+              <img src="roll.jpg" alt="Roll Monitor" class="rounded mb-4" />
+              <h4 class="text-xl font-semibold mb-2">Roll Monitor</h4>
+              <p class="text-sm text-gray-600">Portable, rollable screen prototype for mobile professionals.</p>
+            </div>
+            <div class="border rounded-lg shadow p-4 bg-white text-black w-72 flex-shrink-0">
+              <img src="12.jpeg" alt="Mini Fan Blade" class="rounded mb-4" />
+              <h4 class="text-xl font-semibold mb-2">Mini Fan Blade</h4>
+              <p class="text-sm text-gray-600">Aerodynamic fan design using ABS material.</p>
+            </div>
+          </div>
+          <!-- Clone again for infinite scroll -->
+          <div class="flex space-x-8">
+            <!-- same cards again -->
+            <div class="border rounded-lg shadow p-4 bg-white text-black w-72 flex-shrink-0">
+              <img src="jet.jpg" alt="Mini Jet Engine" class="rounded mb-4" />
+              <h4 class="text-xl font-semibold mb-2">Mini Jet Engine</h4>
+              <p class="text-sm text-gray-600">3D-printed turbine prototype demonstrating airflow and structure.</p>
+            </div>
+            <div class="border rounded-lg shadow p-4 bg-white text-black w-72 flex-shrink-0">
+              <img src="cad p.jpeg" alt="Custom Casing" class="rounded mb-4" />
+              <h4 class="text-xl font-semibold mb-2">Custom Casing</h4>
+              <p class="text-sm text-gray-600">Lightweight casing for electronic devices.</p>
+            </div>
+            <div class="border rounded-lg shadow p-4 bg-white text-black w-72 flex-shrink-0">
+              <img src="roll.jpg" alt="Roll Monitor" class="rounded mb-4" />
+              <h4 class="text-xl font-semibold mb-2">Roll Monitor</h4>
+              <p class="text-sm text-gray-600">Portable, rollable screen prototype for mobile professionals.</p>
+            </div>
+            <div class="border rounded-lg shadow p-4 bg-white text-black w-72 flex-shrink-0">
+              <img src="12.jpeg" alt="Mini Fan Blade" class="rounded mb-4" />
+              <h4 class="text-xl font-semibold mb-2">Mini Fan Blade</h4>
+              <p class="text-sm text-gray-600">Aerodynamic fan design using ABS material.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-white text-black">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-bold mb-4">Get in Touch</h3>
+      <p class="mb-8">Have a project or idea? Reach out to us via the form, email, or WhatsApp.</p>
+      <form class="space-y-4 text-left">
+        <input type="text" placeholder="Your Name" class="w-full p-3 border rounded" />
+        <input type="email" placeholder="Your Email" class="w-full p-3 border rounded" />
+        <textarea placeholder="Your Message" rows="4" class="w-full p-3 border rounded"></textarea>
+        <button type="submit" class="bg-gray-900 text-white px-6 py-2 rounded hover:bg-gray-800">Send Message</button>
+      </form>
+      <div class="mt-6 text-sm text-gray-600">
+        Or email us at <a href="mailto:v2real@example.com" class="text-blue-500">v2real@example.com</a><br />
+        Or chat on <a href="https://wa.me/1234567890" class="text-green-500">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-4">
+    <p>&copy; 2025 V2REAL. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
