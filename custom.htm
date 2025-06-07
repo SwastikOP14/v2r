@@ -5,24 +5,138 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Custom Design - V2REAL</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+   .scrolling-banner {
+  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.scrolling-track {
+  display: flex;
+  width: 200vw;
+  animation: scrollX 20s linear infinite;
+}
+
+
+.scrolling-track img {
+  flex-shrink: 0;
+  width: 33.3333vw;
+  height: 100vh;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+@keyframes scrollX {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+  </style>
 </head>
 <body class="bg-[#1E3A8A] text-[#FBEAEB] font-sans">
-  <header class="backdrop-blur-md bg-black/30 text-[#FBEAEB] p-4 border-b border-white/30">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <a href="index.html" class="flex items-center space-x-2">
-        <img src="logo.png" alt="V2REAL Logo" class="h-8 w-8" />
-        <h1 class="text-2xl font-bold">V2REAL</h1>
-      </a>
+
+  <!-- Hero Section with Horizontal Scrolling Background -->
+  <section class="relative h-screen flex items-center justify-center text-center">
+    <!-- Scrolling Background Images -->
+    <div class="scrolling-banner">
+      <div class="scrolling-track">
+        <img src="bg1.jpg" alt="Background 1" />
+        <img src="bg2.jpg" alt="Background 2" />
+        <img src="bg3.webp" alt="Background 3" />
+        <img src="bg1.jpg" alt="Background 1 Duplicate" />
+        <img src="bg2.jpg" alt="Background 2 Duplicate" />
+        <img src="bg3.webp" alt="Background 3 Duplicate" />
+      </div>
     </div>
-  </header>
-  <main class="pt-20 px-4 max-w-4xl mx-auto">
-    <h2 class="text-4xl font-bold mb-4">Custom Design</h2>
-    <img src="custom.jpg" alt="Custom Design" class="rounded mb-6 w-full h-64 object-cover" />
-    <p class="text-lg mb-4">Tailored design solutions to meet your unique project goals. We work closely with clients to craft innovative and functional results that truly stand out.</p>
-    <a href="index.html" class="text-[#FBEAEB] underline font-semibold">&#8592; Back to Home</a>
-  </main>
-  <footer class="bg-[#0f172a] text-[#FBEAEB] text-center py-4 mt-16">
-    <p>&copy; 2025 V2REAL. All rights reserved.</p>
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+
+    <!-- Hero Content -->
+    <div class="z-20 max-w-3xl px-4">
+      <h1 class="text-5xl font-extrabold mb-4">Custom Design Solutions</h1>
+      <p class="text-lg leading-relaxed">Transforming your ideas into precise, efficient, and impactful realities with expert engineering and design services.</p>
+    </div>
+  </section>
+
+  <!-- Our Expertise Section -->
+ <!-- Our Expertise Section -->
+<section class="bg-white text-gray-900 py-16 px-6">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-10">Our Expertise</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md expertise-card">
+        <img src="3d print.jpg" alt="3D Modeling" class="w-full h-40 object-cover rounded-md mb-4" />
+        <h3 class="text-xl font-semibold mb-2 text-[#1E3A8A]">3D Modeling</h3>
+        <p class="text-sm text-gray-700">Precision CAD models tailored for manufacturing, visualization, and prototyping.</p>
+      </div>
+
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md expertise-card">
+        <img src="prod.jpg" alt="Product Design" class="w-full h-40 object-cover rounded-md mb-4" />
+        <h3 class="text-xl font-semibold mb-2 text-[#1E3A8A]">Product Design</h3>
+        <p class="text-sm text-gray-700">Concept to creation: intuitive, functional and aesthetic design services.</p>
+      </div>
+
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md expertise-card">
+        <img src="prot.jpg" alt="Prototyping" class="w-full h-40 object-cover rounded-md mb-4" />
+        <h3 class="text-xl font-semibold mb-2 text-[#1E3A8A]">Prototyping</h3>
+        <p class="text-sm text-gray-700">Rapid prototyping using 3D printing and laser cutting for quick iteration.</p>
+      </div>
+
+      <!-- Wrap the last two items in a flex container to center them on large screens -->
+      <div class="lg:col-span-3 flex justify-center gap-10">
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md expertise-card w-full max-w-sm">
+          <img src="sim.png" alt="Simulation & Analysis" class="w-full h-40 object-cover rounded-md mb-4" />
+          <h3 class="text-xl font-semibold mb-2 text-[#1E3A8A]">Simulation & Analysis</h3>
+          <p class="text-sm text-gray-700">Strength, thermal and motion simulations for optimized product performance.</p>
+        </div>
+
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md expertise-card w-full max-w-sm">
+          <img src="2d.png" alt="Technical Documentation" class="w-full h-40 object-cover rounded-md mb-4" />
+          <h3 class="text-xl font-semibold mb-2 text-[#1E3A8A]">Technical Documentation</h3>
+          <p class="text-sm text-gray-700">Engineering drawings, user manuals, and BOM documentation.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Team Members Section -->
+  <section class="bg-[#0f172a] text-white py-16 px-6">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-12">Meet Our Team</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 justify-center gap-10 max-w-md mx-auto">
+      <div class="bg-[#1e293b] rounded-lg p-6 shadow-lg">
+        <img src="pabana.jpg" alt="Team Member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+        <h3 class="text-xl font-semibold">Sarthak Chand</h3>
+        <p class="text-sm text-gray-300">Lead Product Designer</p>
+      </div>
+      <div class="bg-[#1e293b] rounded-lg p-6 shadow-lg">
+        <img src="swastik.jpg" alt="Team Member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+        <h3 class="text-xl font-semibold">Swastik Biswal</h3>
+        <p class="text-sm text-gray-300">CAD & Simulation Expert</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0f172a] text-center py-6 text-sm text-gray-400 border-t border-white/10">
+    &copy; 2025 V2REAL. All rights reserved.
   </footer>
+
 </body>
 </html>

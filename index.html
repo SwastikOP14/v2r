@@ -25,10 +25,14 @@
     }
 
     /* Infinite Scroll Animation */
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+     @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
 
     .animate-scroll {
       animation: scroll 30s linear infinite;
@@ -51,9 +55,10 @@
       </div>
       <nav class="space-x-4">
         <a href="#services" class="hover:text-gray-300">Services</a>
-        <a href="#prototypes" class="hover:text-gray-300">Prototypes</a>
         <a href="#portfolio" class="hover:text-gray-300">Portfolio</a>
+        <a href="#contact" class="hover:text-gray-300">Products</a>
         <a href="#contact" class="hover:text-gray-300">Contact</a>
+
       </nav>
     </div>
   </header>
@@ -73,21 +78,21 @@
     <div class="relative max-w-6xl mx-auto px-4 text-white">
       <h3 class="text-3xl font-bold mb-8 text-center">Our Services</h3>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <a href="cad.htm" class="block transform hover:scale-105 transition duration-300">
+        <a href="cad.htm" target="_blank" class="block transform hover:scale-105 transition duration-300">
           <div class="p-6 border rounded-lg shadow text-center bg-white/10 backdrop-blur-md hover:bg-white/20 hover:shadow-xl cursor-pointer">
             <img src="cad.jpg" alt="CAD Modelling" class="w-full h-40 object-cover mb-4 rounded" />
             <h4 class="text-xl font-semibold mb-2">CAD Modelling</h4>
             <p>Accurate and detailed 3D models tailored for mechanical engineering and product development.</p>
           </div>
         </a>
-        <a href="3d.htm" class="block transform hover:scale-105 transition duration-300">
+        <a href="3d.htm" target="_blank" class="block transform hover:scale-105 transition duration-300">
           <div class="p-6 border rounded-lg shadow text-center bg-white/10 backdrop-blur-md hover:bg-white/20 hover:shadow-xl cursor-pointer">
             <img src="3d.jpeg" alt="3D Prototyping" class="w-full h-40 object-cover mb-4 rounded" />
             <h4 class="text-xl font-semibold mb-2">3D Prototyping</h4>
             <p>Rapid development of functional prototypes to validate design concepts and accelerate innovation.</p>
           </div>
         </a>
-        <a href="custom.htm" class="block transform hover:scale-105 transition duration-300">
+        <a href="custom.htm" target="_blank" class="block transform hover:scale-105 transition duration-300">
           <div class="p-6 border rounded-lg shadow text-center bg-white/10 backdrop-blur-md hover:bg-white/20 hover:shadow-xl cursor-pointer">
             <img src="custom.jpg" alt="Custom Design" class="w-full h-40 object-cover mb-4 rounded" />
             <h4 class="text-xl font-semibold mb-2">Custom Design</h4>
@@ -98,16 +103,19 @@
     </div>
   </section>
 
-  <!-- Prototypes with Infinite Scroll -->
-  <section id="prototypes" class="relative py-16 bg-cover bg-center parallax" style="background-image: url('portfolio-bg.jpg');">
-    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-    <div class="relative max-w-6xl mx-auto px-4">
-      <h3 class="text-3xl font-bold mb-8 text-center text-white">Prototype Display</h3>
+ <!-- Prototypes with Infinite Scroll -->
+<section id="portfolio" class="py-16 bg-[#2F3C7E] text-center">
+  <div class="max-w-6xl mx-auto px-4">
+
+    <!-- Heading at the top -->
+    <h3 class="text-3xl font-bold mb-10 text-white drop-shadow-sm">PORTFOLIO</h3>
+
+    <!-- Scrolling Animation of Prototypes -->
+    <div class="overflow-x-auto whitespace-nowrap pb-12">
       <div class="overflow-hidden relative">
-        <div class="flex animate-scroll space-x-8 w-max">
-          <!-- Repeat content twice for seamless scroll -->
+        <div class="flex animate-marquee space-x-8 w-max">
+          <!-- Cards Group 1 -->
           <div class="flex space-x-8">
-            <!-- Prototype Cards -->
             <div class="border rounded-lg shadow p-4 bg-white text-black w-72 flex-shrink-0">
               <img src="jet.jpg" alt="Mini Jet Engine" class="rounded mb-4" />
               <h4 class="text-xl font-semibold mb-2">Mini Jet Engine</h4>
@@ -129,9 +137,9 @@
               <p class="text-sm text-gray-600">Aerodynamic fan design using ABS material.</p>
             </div>
           </div>
-          <!-- Clone again for infinite scroll -->
+
+          <!-- Cards Group 2 (Duplicate for infinite loop) -->
           <div class="flex space-x-8">
-            <!-- same cards again -->
             <div class="border rounded-lg shadow p-4 bg-white text-black w-72 flex-shrink-0">
               <img src="jet.jpg" alt="Mini Jet Engine" class="rounded mb-4" />
               <h4 class="text-xl font-semibold mb-2">Mini Jet Engine</h4>
@@ -156,7 +164,15 @@
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- Button Below the Scroll -->
+    <a href="prototype-details.html" target="_blank"
+       class="inline-block bg-[#FBEAEB] text-[#2F3C7E] font-bold px-6 py-3 rounded-lg shadow-lg mt-4 hover:bg-[#ffdfe3] transition text-xl">
+      View Portfolio in Detail
+    </a>
+  </div>
+</section>
+
 
 <!-- Contact -->
 <section id="contact" class="py-16 bg-white text-black">
@@ -204,7 +220,7 @@
 
     <!-- Alternate contact methods -->
     <div class="mt-6 text-sm">
-      Or email us at <a href="mailto:v2real@example.com" class="text-blue-500 underline">v2real@example.com</a><br />
+      Or Connect via LinkedIn <a href="https://www.linkedin.com/in/swastik-biswal-b39941271/" target="_blank" class="text-blue-500 underline">Swastik Biswal</a><br />
       Or chat on <a href="https://wa.me/1234567890" class="text-green-500 underline">WhatsApp</a>
     </div>
   </div>
