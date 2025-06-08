@@ -40,6 +40,18 @@
     html {
     scroll-behavior: smooth;
   }
+
+  html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
   </style>
 </head>
 
@@ -62,6 +74,8 @@
       </nav>
     </div>
   </header>
+
+  <main class="flex-grow">
 
   <!-- Hero -->
   <section class="relative h-screen flex items-center justify-center bg-cover bg-center parallax" style="background-image: url('design.jpg');">
@@ -223,7 +237,7 @@
         <div class="flex items-center gap-2">
           <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" class="w-6 h-6" />
           <a href="https://www.linkedin.com/in/swastik-biswal-b39941271/" target="_blank" class="text-blue-500 underline hover:text-blue-700">
-            Connect on LinkedIn: Swastik Biswal
+            Connect on LinkedIn: V2REAL
           </a>
         </div>
         <div class="flex items-center gap-2">
@@ -233,9 +247,9 @@
           </a>
         </div>
       </div>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-center py-4">
+    </main>
+  <!-- Footer stays at bottom -->
+    <footer class="bg-gray-900 text-white text-center py-4 w-full">
     <p>&copy; 2025 V2REAL. All rights reserved.</p>
   </footer>
 </body>

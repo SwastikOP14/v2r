@@ -6,7 +6,12 @@
   <title>Custom Design - V2REAL</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-   .scrolling-banner {
+
+html {
+    scroll-behavior: smooth;
+}
+
+.scrolling-banner {
   overflow: hidden;
   position: absolute;
   inset: 0;
@@ -21,7 +26,6 @@
   width: 200vw;
   animation: scrollX 20s linear infinite;
 }
-
 
 .scrolling-track img {
   flex-shrink: 0;
@@ -43,7 +47,31 @@
 }
   </style>
 </head>
-<body class="bg-[#1E3A8A] text-[#FBEAEB] font-sans">
+<body class="bg-[#1E3A8A] text-white font-sans overflow-x-hidden">
+
+  <!-- Header Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md border-b border-white/20 text-white">
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <a href="#" onclick="scrollToTop(event)" class="flex items-center space-x-2 hover:opacity-80 transition cursor-pointer">
+        <img src="logo.png" alt="V2REAL Logo" class="h-8 w-8" />
+        <span class="text-2xl text-white"><b>V2REAL :</b> Custom Design</span>
+    </a>
+
+    <nav class="space-x-4 text-sm sm:text-base">
+      <a href="#expertise" class="hover:text-gray-300 transition">Expertise</a>
+      <a href="#review" class="hover:text-gray-300 transition">Review</a>
+      <a href="#team" class="hover:text-gray-300 transition">Team</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
 
   <!-- Hero Section with Horizontal Scrolling Background -->
   <section class="relative h-screen flex items-center justify-center text-center">
@@ -62,34 +90,33 @@
     <!-- Dark Overlay -->
     <div class="absolute inset-0 bg-black/60 z-10"></div>
 
-    <!-- Hero Content -->
-    <div class="z-20 max-w-3xl px-4">
+    <!-- Hero Content --> 
+    <div class="z-20 max-w-3xl px-4 text-white">
       <h1 class="text-5xl font-extrabold mb-4">Custom Design Solutions</h1>
       <p class="text-lg leading-relaxed">Transforming your ideas into precise, efficient, and impactful realities with expert engineering and design services.</p>
     </div>
   </section>
 
-  <!-- Our Expertise Section -->
  <!-- Our Expertise Section -->
-<section class="bg-white text-gray-900 py-16 px-6">
+<section id="expertise" class="bg-white text-gray-900 py-16 px-6">
   <div class="max-w-5xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-10">Our Expertise</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       
       <div class="bg-gray-100 p-6 rounded-lg shadow-md expertise-card">
-        <img src="3d print.jpg" alt="3D Modeling" class="w-full h-40 object-cover rounded-md mb-4" />
+        <img src="CUSTOM/3d print.jpg" alt="3D Modeling" class="w-full h-40 object-cover rounded-md mb-4" />
         <h3 class="text-xl font-semibold mb-2 text-[#1E3A8A]">3D Modeling</h3>
         <p class="text-sm text-gray-700">Precision CAD models tailored for manufacturing, visualization, and prototyping.</p>
       </div>
 
       <div class="bg-gray-100 p-6 rounded-lg shadow-md expertise-card">
-        <img src="prod.jpg" alt="Product Design" class="w-full h-40 object-cover rounded-md mb-4" />
+        <img src="CUSTOM/prod.jpg" alt="Product Design" class="w-full h-40 object-cover rounded-md mb-4" />
         <h3 class="text-xl font-semibold mb-2 text-[#1E3A8A]">Product Design</h3>
         <p class="text-sm text-gray-700">Concept to creation: intuitive, functional and aesthetic design services.</p>
       </div>
 
       <div class="bg-gray-100 p-6 rounded-lg shadow-md expertise-card">
-        <img src="prot.jpg" alt="Prototyping" class="w-full h-40 object-cover rounded-md mb-4" />
+        <img src="CUSTOM/prot.jpg" alt="Prototyping" class="w-full h-40 object-cover rounded-md mb-4" />
         <h3 class="text-xl font-semibold mb-2 text-[#1E3A8A]">Prototyping</h3>
         <p class="text-sm text-gray-700">Rapid prototyping using 3D printing and laser cutting for quick iteration.</p>
       </div>
@@ -97,13 +124,13 @@
       <!-- Wrap the last two items in a flex container to center them on large screens -->
       <div class="lg:col-span-3 flex justify-center gap-10">
         <div class="bg-gray-100 p-6 rounded-lg shadow-md expertise-card w-full max-w-sm">
-          <img src="sim.png" alt="Simulation & Analysis" class="w-full h-40 object-cover rounded-md mb-4" />
+          <img src="CUSTOM/sim.png" alt="Simulation & Analysis" class="w-full h-40 object-cover rounded-md mb-4" />
           <h3 class="text-xl font-semibold mb-2 text-[#1E3A8A]">Simulation & Analysis</h3>
           <p class="text-sm text-gray-700">Strength, thermal and motion simulations for optimized product performance.</p>
         </div>
 
         <div class="bg-gray-100 p-6 rounded-lg shadow-md expertise-card w-full max-w-sm">
-          <img src="2d.png" alt="Technical Documentation" class="w-full h-40 object-cover rounded-md mb-4" />
+          <img src="CUSTOM/2d.jpg" alt="Technical Documentation" class="w-full h-40 object-cover rounded-md mb-4" />
           <h3 class="text-xl font-semibold mb-2 text-[#1E3A8A]">Technical Documentation</h3>
           <p class="text-sm text-gray-700">Engineering drawings, user manuals, and BOM documentation.</p>
         </div>
@@ -113,9 +140,64 @@
   </div>
 </section>
 
+<!-- Customer Reviews / Project Highlights -->
+<section id="Review" class="bg-gray-100 text-gray-800 py-16 px-6">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-12">What Our Customers Say</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      
+      <!-- Review Card 1 -->
+      <div class="bg-white p-6 rounded-lg shadow-md text-left">
+        <img src="roll.jpg" 
+            onclick="openModal(this.src)" 
+            class="w-full h-40 object-contain object-center rounded-md mb-4 bg-white cursor-pointer transition-transform hover:scale-105" 
+            alt="EV Enclosure Design" />
+        <h3 class="text-xl font-semibold text-[#1E3A8A] mb-2">Portable 3D-Printed EV Enclosure</h3>
+        <p class="text-sm text-gray-700 mb-4">We designed a robust, waterproof enclosure for a US-based EV startup, optimized for injection molding and cable routing.</p>
+        <div class="border-t pt-4 text-sm italic text-gray-600">
+          “The V2REAL team was incredibly responsive and delivered above expectations. The design was spot on!”<br>
+          — Jonathan M., California, USA
+        </div>
+      </div>
+
+      <!-- Review Card 2 -->
+      <div class="bg-white p-6 rounded-lg shadow-md text-left">
+        <img src="12.jpeg" onclick="
+            openModal(this.src)" 
+            class="w-full h-40 object-contain object-center rounded-md bg-white cursor-pointer transition-transform hover:scale-105"
+            alt="Project Image"/>
+        <h3 class="text-xl font-semibold text-[#1E3A8A] mb-2">Laser-Cut Educational Kit</h3>
+        <p class="text-sm text-gray-700 mb-4">A laser-cut STEM teaching aid designed and prototyped for a Canadian learning center. Includes magnet slots and snap fits.</p>
+        <div class="border-t pt-4 text-sm italic text-gray-600">
+          “Amazing attention to detail and quick prototyping turnaround. Will definitely collaborate again.”<br>
+          — Priya K., Toronto, Canada
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Modal for Enlarge Image -->
+  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+    <span onclick="closeModal()" class="absolute top-6 right-6 text-white text-4xl cursor-pointer">&times;</span>
+    <img id="modalImg" src="" class="max-h-[90vh] max-w-[90vw] rounded-lg shadow-lg" />
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById("modalImg").src = src;
+      document.getElementById("imageModal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").classList.add("hidden");
+    }
+  </script>
+
 
   <!-- Team Members Section -->
-  <section class="bg-[#0f172a] text-white py-16 px-6">
+  <section id=team class="bg-[#0f172a] text-white py-16 px-6">
   <div class="max-w-5xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-12">Meet Our Team</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 justify-center gap-10 max-w-md mx-auto">
